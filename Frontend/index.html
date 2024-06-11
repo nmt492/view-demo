@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>party - Trang chủ</title>
+	<link rel="shortcut icon" type="image/png" href="images/logo-nana.jpg"/>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<style type="text/css">
+			.slide{width: 891px; height: 336px; padding-left: 330px; overflow: hidden;}
+			.slide img{ height: 320px; margin-left: 10px; margin-top: 10px; border-radius: 10px; }
+		</style>
+		<script type="text/javascript">
+			//khởi tạo array chứa danh sách ảnh
+			var slide = new Array();
+			slide[0] = "images/slide1.jpg";
+			slide[1] = "images/slide2.jpg";
+			//tạo biến lưu vị trí ảnh
+			var n = 0;
+			setInterval(function(){
+				$(".slide-img").fadeOut(500,function(){
+					n++;
+					//thay đổi giá trị của thuộc tính src thành ảnh kế tiếp
+					$(".slide-img").attr("src",slide[n]);
+					$(".slide-img").fadeIn(500);
+					//nếu n ở vị trí ảnh cuối cùng thì reset n
+					if(n == slide.length - 1)
+						n = -1;
+				});
+			},4000);
+		</script>
+</head>
+<body>
+	
+	<div class="container">
+		<!-- header -->
+		<header>
+			<div class="header-left">
+				<nav>
+					<ul>
+						<li><a href="#"><i class="fa-solid fa-location-dot"></i></i> Địa chỉ</a></li>
+						<li><a href="#"><i class="fa-solid fa-phone"></i> 0915101520</a></li>
+					</ul>
+				</nav>		
+			</div>	
+			<div class="header-right">
+				<nav>
+					<ul>
+						<li><a href="#"> Thanh toán</a></li>
+						<li><a href="#">Địa chỉ</a></li>
+						<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
+					</ul>
+				</nav>		
+			</div>
+		</header>
+		<!-- /header -->
+		<!-- Banner -->
+		<div class="banner">
+			<div class="banner-left">
+				<img style="width: 120px; margin: 12px; padding-left: 20px; cursor: pointer;" src="images/logo-nana.jpg">
+			</div>
+			<div class="search-container">
+				<select>
+					<option>All</option>
+					<option>Bảng thông tin, bảng tên, cây welcome</option>
+					<option>Bóng bay sinh nhật</option>
+					<option>Mô hình chibi</option>
+					<option>Phụ kiện trang trí sinh nhật</option>
+					<option>Trang trí sinh nhật</option>
+				</select>
+  				<input type="text" placeholder="Tìm kiếm danh mục, sản phẩm...">
+			  	<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+			</div>
+			<div class="banner-right">
+				<img style="width: 200px; margin-top: 20px;" src="images/hotline-1.jpg">
+			</div>
+		</div>
+		<!-- /Banner -->
+		<div class="line1"></div>
+		<!-- Menu ngang -->
+		<div class="menu-top">
+			<div class="box1"></div>
+			<div onclick="showHideList()" class="box2">
+				<i class="fa-solid fa-list"></i>   Danh mục sản phẩm
+				<ul class="myList">
+					<li><a style="color: #ff78b5;" href="shop.html">Sản phẩm bán chạy</a><i style="right: 30px; color: yellow;" class="fa-solid fa-fire-flame-curved"></i></li>
+					<li>
+						<a href="shop.html">Trang trí sinh nhật</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="shop.html">Trang trí thôi nôi</a></li>
+							<li><a href="shop.html">Trang trí sinh nhật cho bé gái</a></li>
+							<li><a href="shop.html">Trang trí sinh nhật cho bé trai</a></li>
+							<li><a href="shop.html">Trang trí sinh nhật cho người lớn</a></li>
+							<li><a href="shop.html">Bộ full (Packgae box)</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="shop.html">Bóng bay sinh nhật</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="shop.html">Bóng cười</a></li>
+							<li><a href="shop.html">Bóng cao su</a></li>
+							<li><a href="shop.html">Bóng nhôm</a></li>
+							<li><a href="shop.html">Combo bóng</a></li>
+							<li><a href="shop.html">Phụ kiện bóng</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="shop.html">Bảng thông tin, bảng tên, cây welcome</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="shop.html">Bảng tên</a></li>
+							<li><a href="shop.html">Bảng thông tin</a></li>
+							<li><a href="shop.html">Cây welcome</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="shop.html">Backdrop - phông màn</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="shop.html">Trang trí thôi nôi</a></li>
+							<li><a href="shop.html">Trang trí sinh nhật cho bé gái</a></li>
+							<li><a href="shop.html">Trang trí sinh nhật cho bé trai</a></li>
+							<li><a href="shop.html">Trang trí sinh nhật cho người lớn</a></li>
+							<li><a href="shop.html">Bộ full (Packgae box)</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="shop.html">Phụ kiện trang trí sinh nhật</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="shop.html">Backdrop theo chủ đề</a></li>
+							<li><a href="shop.html">Dây Garland</a></li>
+							<li><a href="shop.html">Đèn trang trí</a></li>
+							<li><a href="shop.html">Màn giấy xoắn</a></li>
+							<li><a href="shop.html">Màn kim tuyến</a></li>
+							<li><a href="shop.html">Phông quạt giấy</a></li>
+							<li><a href="shop.html">Phông tú cầu</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="shop.html">Mô hình Chibi</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="shop.html">Chibi bé gái</a></li>
+							<li><a href="shop.html">Chi bi bé trai</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="shop.html">Phụ kiện trang trí đám cưới, ngày đặc biệt</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="shop.html">Bong bóng</a></li>
+							<li><a href="shop.html">Phụ kiện trang trí khác</a></li>
+					</li>
+				</ul>
+			</div>
+			
+			<nav>
+				<ul>
+					<li><a href="index.html">Trang chủ</a></li>
+					<li><a href="#">Giới thiệu</a></li>
+					<li><a href="#">Hướng dẫn mua hàng</a></li>
+					<li><a href="#">Đăng ký mua buôn</a></li>
+					<li><a href="#">Địa chỉ</a></li>
+					<li><a style="margin-left: 120px;" href="cart.html">Giỏ hàng <i class="fa-solid fa-basket-shopping"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!-- /Menu ngang -->
+
+		<!-- Banner chính -->
+		<div class="slide"><img src="images/slide1.jpg" class="slide-img"></div>
+		<!-- /Banner chính -->
+
+
+		<!-- main -->
+		<div class="main">
+			<!-- san-pham-ban-chay -->
+			<div class="san-pham-ban-chay">
+				<h2 class="tittle">SẢN PHẨM BÁN CHẠY</h2>
+				<div class="gach-chan">
+					<img style="height: 35px;" src="images/gach-chan.png">
+				</div>
+				<div class="list-san-pham">
+					<div class="card">
+						<div class="card-image">
+							<img src="images/hot1.jpg">
+						</div>
+						<div class="card-content">
+							<h3 class="card-name"></i>Tay nắm bánh hình mây, cầu vồng</h3>
+							<p style="color: #e04c78; font-size: 20px; margin-top: -12px;" class="card-price">45.000₫
+							</p>
+							<p class="card-add">Thêm vào giỏ hàng</p>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="images/hot2.jpg">
+						</div>
+						<div class="card-content">
+							<h3 class="card-name"></i>Bộ trang trí chủ đề Puppy Girl cho bé gái</h3>
+							<p style="color: #e04c78; font-size: 20px; margin-top: -12px;" class="card-price">290.000₫
+							</p>
+							<p class="card-add">Thêm vào giỏ hàng</p>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="images/hot3.jpg">
+						</div>
+						<div class="card-content">
+							<h3 class="card-name"></i>Tag cắm bóng bay xinh xắn, màu hồng</h3>
+							<p style="color: #e04c78; font-size: 20px; margin-top: -12px;" class="card-price">20.000₫
+							</p>
+							<p class="card-add">Thêm vào giỏ hàng</p>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="images/hot4.jpg">
+						</div>
+						<div class="card-content">
+							<h3 class="card-name"></i>Mô hình Chibi bé gái công chúa</h3>
+							<p style="color: #e04c78; font-size: 20px; margin-top: -12px;" class="card-price">95.000₫
+							</p>
+							<p class="card-add">Thêm vào giỏ hàng</p>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="images/hot5.jpg">
+						</div>
+						<div class="card-content">
+							<h3 class="card-name"></i>Bộ trang trí chủ đề khủng long, bé trai</h3>
+							<p style="color: #e04c78; font-size: 20px; margin-top: -12px;" class="card-price">499.000₫
+							</p>
+							<p class="card-add">Thêm vào giỏ hàng</p>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-image">
+							<img src="images/hot6.jpg">
+						</div>
+						<div class="card-content">
+							<h3 class="card-name"></i>Bóng bay kim loại Đỏ Đô màu đẹp</h3>
+							<p style="color: #e04c78; font-size: 20px; margin-top: -12px;" class="card-price">35.000₫
+							</p>
+							<p class="card-add">Thêm vào giỏ hàng</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- /san-pham-ban-chay -->
+
+			<!-- Các sản phẩm -->
+			<!-- Trang trí sinh nhật -->
+			<div class="box">
+				<div class="link">
+					<h2 href="#">TRANG TRÍ SINH NHẬT</h2>
+					<a href="#">Trang trí sinh nhật cho bé gái</a>
+					<a href="#">Trang trí sinh nhật cho bé trai</a>
+					<a href="#">Trang trí sinh nhật cho người lớn</a>
+					<p>Xem tất cả<i style="font-size: 8px;" class="fa-solid fa-greater-than"></i></p>
+				</div>
+				<div class="main-bot-right">
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/1.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé trai</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/2.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/3.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/4.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/5.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/6.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/7.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/8.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/9.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/10.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+				</div>
+			</div>
+			<!-- Trang trí sinh nhật -->
+
+			<!-- Bóng bay sinh nhật -->
+			<div class="box">
+				<div class="link">
+					<h2 href="">BÓNG BAY SINH NHẬT</h2>
+					<a href="#">Trang trí sinh nhật cho bé gái</a>
+					<a href="#">Trang trí sinh nhật cho bé trai</a>
+					<a href="#">Trang trí sinh nhật cho người lớn</a>
+					<p>Xem tất cả</p>
+				</div>
+				<div class="main-bot-right">
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/1.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé trai</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/2.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/3.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/4.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/5.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/6.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/7.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/8.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/9.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/10.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+				</div>
+			</div>
+			<!-- Bóng bay sinh nhật -->
+
+			<!-- Phụ kiện -->
+			<div class="box">
+				<div class="link">
+					<h2 href="">PHỤ KIỆN TRANG TRÍ</h2>
+					<a href="#">Trang trí sinh nhật cho bé gái</a>
+					<a href="#">Trang trí sinh nhật cho bé trai</a>
+					<a href="#">Trang trí sinh nhật cho người lớn</a>
+					<p>Xem tất cả</p>
+				</div>
+				<div class="main-bot-right">
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/1.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé trai</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/2.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/3.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/4.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/5.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/6.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/7.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/8.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/9.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/10.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Phụ kiện -->
+
+			<!-- Mô hình chibi -->
+			<div class="box">
+				<div class="link">
+					<h2 href="">MÔ HÌNH CHIBI</h2>
+					<a href="#">Trang trí sinh nhật cho bé gái</a>
+					<a href="#">Trang trí sinh nhật cho bé trai</a>
+					<a href="#">Trang trí sinh nhật cho người lớn</a>
+					<p>Xem tất cả</p>
+				</div>
+				<div class="main-bot-right">
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/1.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé trai</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/2.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/3.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/4.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/5.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/6.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/7.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/8.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/9.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/shop/10.jpg">
+						</div>
+						<div class="content-card">Bộ trang trí chủ đề gà vàng cho bé</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Mô hình chibi -->
+			<!-- /Các sản phẩm -->
+
+			<!-- Tin tức -->
+			<div class="tin-tuc">
+				<h2 class="tittle">TIN TỨC - BÀI VIẾT</h2>
+				<div class="gach-chan">
+					<img style="height: 35px;" src="images/gach-chan.png">
+				</div>
+				<div class="noi-dung">
+					<div class="noi-dung-left">
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/1.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+							<div class="text">
+								Nguyên tắc ăn uống “vào con không vào mẹ” Giai đoạn 1 (3 tháng đầu) Ở
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/2.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+							<div class="text">
+								Nguyên tắc ăn uống “vào con không vào mẹ” Giai đoạn 1 (3 tháng đầu) Ở
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/3.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+							<div class="text">
+								Nguyên tắc ăn uống “vào con không vào mẹ” Giai đoạn 1 (3 tháng đầu) Ở
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/4.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+							<div class="text">
+								Nguyên tắc ăn uống “vào con không vào mẹ” Giai đoạn 1 (3 tháng đầu) Ở
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/5.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+							<div class="text">
+								Nguyên tắc ăn uống “vào con không vào mẹ” Giai đoạn 1 (3 tháng đầu) Ở
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/6.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+							<div class="text">
+								Nguyên tắc ăn uống “vào con không vào mẹ” Giai đoạn 1 (3 tháng đầu) Ở
+							</div>
+						</div>
+					</div>
+					<div class="noi-dung-right">
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/1.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/2.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/3.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/4.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/5.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+						</div>
+						<div class="card">
+							<div class="image">
+								<img src="images/tintuc/6.jpg">
+							</div>
+							<div class="content">
+								Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- Tin tức -->
+
+			<!-- Hình ảnh thực tế -->
+			<div class="thuc-te">
+				<h2 class="tittle">HÌNH ẢNH TRANG TRÍ THỰC TẾ</h2>
+				<div class="gach-chan">
+					<img style="height: 35px;" src="images/gach-chan.png">
+				</div>
+				<div style="text-align: center;" class="text">Dưới đây là một số hình ảnh thi công thực tế tại nhà khách hàng mà nhân viên chúng tôi ghi nhận được, mời quý vị đón xem:</div>
+				<div class="list-image">
+					<li>
+						<img src="images/thucte/1.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/2.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/3.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/4.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/5.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/6.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/7.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/8.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/9.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/10.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/11.jpg">
+					</li>
+					<li>
+						<img src="images/thucte/12.jpg">
+					</li>
+				</div>
+			</div>
+			<!-- /Hình ảnh thực tế -->
+
+
+
+
+		</div>
+		<!-- /main -->
+
+
+		<!-- footer -->
+		<footer>
+			<!-- Banner -->
+			<div class="my-element">
+				<div class="nana">
+					<img style="height: 200px; padding-top: 50px; padding-left: 150px;" src="images/nana.png">
+				</div>
+				<div class="dang-ky">
+					<h2>ĐĂNG KÝ TƯ VẤN MIỄN PHÍ</h2>
+					<p>Nhân viên của chúng tôi sẵn lòng tư vấn miễn phí giúp bạn</p>
+					<div class="text-box1">
+						<input type="text" placeholder="Tên của bạn...">
+						<input type="text" placeholder="Số điện thoại...">
+					</div>
+					<div class="text-box2">
+						<input type="text" placeholder="Địa chỉ email...">
+						<input type="text" placeholder="Nội dung đăng ký...">
+					</div>
+					<button type="submit">Đăng ký nhận khuyến mãi</button>
+				</div>
+				<div class="nana">
+					<img style="height: 200px; padding-top: 50px;" src="images/nana2.png">
+				</div>
+			</div>
+			<!-- /Banner -->
+
+			<!-- thong-tin -->
+			<div class="bot">
+				<div class="bot-left">
+					<h3>Về chúng tôi</h3>
+					<img style="width: 150px; margin: 12px; padding-left: 20px;" src="images/logo-nana.jpg">
+					<p>Sau một thời gian hoạt động, website đã có những bước tiến đáng kể cả về chất lượng và hình thức. Số lượng khách truy cập website trở thành khách hàng sử dụng dịch vụ thiết kế tăng lên đáng kể.</p>
+					<div class="link">
+						<li class="fb-icon"><i class="fa-brands fa-facebook-f"></i></li>
+						<li class="mail-icon"><i class="fa-regular fa-envelope"></i></li>
+						<li class="phone-icon"><i class="fa-solid fa-phone"></i></li>
+						<li class="yt-icon"><i class="fa-brands fa-youtube"></i></li>
+					</div>
+				</div>
+				<div class="bot-center">
+					<h3>Hỗ trợ khách hàng</h3>
+					<ul class="menu-bot">
+						<li>Hướng dẫn đặt hàng & thanh toán</li>
+						<li>Chính sách giao hàng & đổi trả</li>
+						<li>Thỏa thuận người dùng</li>
+						<li>Chính sách bảo mật</li>
+						<li>Chính sách đại lý</li>
+						<li>Địa chỉ cửa hàng Cây Xinh</li>
+					</ul>
+					<h3>Thông tin liên hệ</h3>
+					<ul>
+						<li>Mobile: 0123456xxx</li>
+						<li>Email: email@gmail.com</li>
+						<li>Website: www.website.com.vn</li>
+					</ul>
+				</div>
+				<div class="bot-right">
+					<h3>Fanpage Facebook</h3>
+					<div class="facebook">
+						<div class="img">
+							<img style="width:60px; cursor: pointer;" src="images/fb.png">
+							<div class="like">
+								<h3 style="color: white; margin: 5px; cursor: pointer;">Facebook <i style="color: #006cff;" class="fa-solid fa-circle-check"></i></h3>
+								<p style="color:white; margin-top: -5px; margin-left: 5px; font-size: 12px;">132.124.453 lượt thích</p>
+							</div>
+						</div>
+						<button type="submit"><i style="color: #3a5897" class="fa-brands fa-square-facebook"></i> Thích trang</button>
+						<button style="right: 10px" type="submit"><i style="color:#686f7e" class="fa-solid fa-share"></i> Share</button>
+						<img style="height:130px" src="images/facebook.jpg">
+					</div>
+				</div>
+			</div>
+			<!-- /thong-tin -->
+
+			<!-- end -->
+			<nav style="background: #f9f9f9; text-align: center;" class="menu-footer">
+				<ul>
+					<li style=" list-style: none;"><img src="images/thanh-toan.png"></li>
+				</ul>
+				<div class="copy-right"> &#x25cf Bản quyền</div>
+			</nav>
+			
+			<!-- /end -->
+		</footer>
+		<!-- /footer -->
+	</div>
+	<!-- /container -->
+</body>
+</html>	

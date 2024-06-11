@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sản phẩm</title>
+	<link rel="shortcut icon" type="image/png" href="images/chibi/chibi1.jpg"/>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	<link rel="stylesheet" type="text/css" href="css/detail-style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<script type="text/javascript">
+		function changeImage(imgId) {
+			//---
+			//reset đường viền
+			document.getElementById('img1').removeAttribute("style");
+			document.getElementById('img2').removeAttribute("style");
+			document.getElementById('img3').removeAttribute("style");
+			document.getElementById('img4').removeAttribute("style");
+			//set đường viền
+			document.getElementById(imgId).setAttribute("style", "border: 1px solid red;")
+			//----
+			//Lấy giá trị thuộc tính src của id = imgId
+			var image_src = document.getElementById(imgId).getAttribute("src");
+			//set giá trị vào id = show-image
+			document.getElementById("show-image").setAttribute("src", image_src)
+		}
+		
+	</script>
+<style type="text/css">
+	.menu-top{
+		position: sticky;
+		top: -10px;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- header -->
+		<header>
+			<div class="header-left">
+				<nav>
+					<ul>
+						<li><a href="#"><i class="fa-solid fa-location-dot"></i></i> Địa chỉ</a></li>
+						<li><a href="#"><i class="fa-solid fa-phone"></i> 0915101520</a></li>
+					</ul>
+				</nav>		
+			</div>	
+			<div class="header-right">
+				<nav>
+					<ul>
+						<li><a href="#"> Thanh toán</a></li>
+						<li><a href="#">Địa chỉ</a></li>
+						<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
+					</ul>
+				</nav>		
+			</div>
+		</header>
+		<!-- /header -->
+		<!-- Banner -->
+		<div class="banner">
+			<div class="banner-left">
+				<img style="width: 120px; margin: 12px; padding-left: 20px; cursor: pointer;" src="images/logo-nana.jpg">
+			</div>
+			<div class="search-container">
+				<select>
+					<option>All</option>
+					<option>Bảng thông tin, bảng tên, cây welcome</option>
+					<option>Bóng bay sinh nhật</option>
+					<option>Mô hình chibi</option>
+					<option>Phụ kiện trang trí sinh nhật</option>
+					<option>Trang trí sinh nhật</option>
+				</select>
+  				<input type="text" placeholder="Tìm kiếm danh mục, sản phẩm...">
+			  	<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+			</div>
+			<div class="banner-right">
+				<img style="width: 200px; margin-top: 20px;" src="images/hotline-1.jpg">
+			</div>
+		</div>
+		<!-- /Banner -->
+		<div class="line1"></div>
+		<!-- Menu ngang -->
+		<div class="menu-top">
+			<div class="box1"></div>
+			<div onclick="showHideList()" class="box2">
+				<i class="fa-solid fa-list"></i>   Danh mục sản phẩm
+				<ul class="myList">
+					<li><a style="color: #ff78b5;" href="#">Sản phẩm bán chạy</a><i style="right: 30px; color: yellow;" class="fa-solid fa-fire-flame-curved"></i></li>
+					<li>
+						<a href="#">Trang trí sinh nhật</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="#">Trang trí thôi nôi</a></li>
+							<li><a href="#">Trang trí sinh nhật cho bé gái</a></li>
+							<li><a href="#">Trang trí sinh nhật cho bé trai</a></li>
+							<li><a href="#">Trang trí sinh nhật cho người lớn</a></li>
+							<li><a href="#">Bộ full (Packgae box)</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Bóng bay sinh nhật</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="#">Bóng cười</a></li>
+							<li><a href="#">Bóng cao su</a></li>
+							<li><a href="#">Bóng nhôm</a></li>
+							<li><a href="#">Combo bóng</a></li>
+							<li><a href="#">Phụ kiện bóng</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Bảng thông tin, bảng tên, cây welcome</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="#">Bảng tên</a></li>
+							<li><a href="#">Bảng thông tin</a></li>
+							<li><a href="#">Cây welcome</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Backdrop - phông màn</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="#">Trang trí thôi nôi</a></li>
+							<li><a href="#">Trang trí sinh nhật cho bé gái</a></li>
+							<li><a href="#">Trang trí sinh nhật cho bé trai</a></li>
+							<li><a href="#">Trang trí sinh nhật cho người lớn</a></li>
+							<li><a href="#">Bộ full (Packgae box)</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Phụ kiện trang trí sinh nhật</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="#">Backdrop theo chủ đề</a></li>
+							<li><a href="#">Dây Garland</a></li>
+							<li><a href="#">Đèn trang trí</a></li>
+							<li><a href="#">Màn giấy xoắn</a></li>
+							<li><a href="#">Màn kim tuyến</a></li>
+							<li><a href="#">Phông quạt giấy</a></li>
+							<li><a href="#">Phông tú cầu</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Mô hình Chibi</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="#">Chibi bé gái</a></li>
+							<li><a href="#">Chi bi bé trai</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Phụ kiện trang trí đám cưới, ngày đặc biệt</a><i class="fa-solid fa-caret-right"></i>
+						<ul class="myList1">
+							<li><a href="#">Bong bóng</a></li>
+							<li><a href="#">Phụ kiện trang trí khác</a></li>
+					</li>
+				</ul>
+			</div>
+			
+			<nav>
+				<ul>
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#">Giới thiệu</a></li>
+					<li><a href="#">Hướng dẫn mua hàng</a></li>
+					<li><a href="#">Đăng ký mua buôn</a></li>
+					<li><a href="#">Địa chỉ</a></li>
+					<li><a style="margin-left: 120px;" href="#">Giỏ hàng <i class="fa-solid fa-basket-shopping"></i></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!-- /Menu ngang -->
+
+
+		<!-- main -->
+		<div class="main">
+			<div class="top">
+				<div class="top-left" id="box">
+					<img src="images/chibi/chibi1.jpg" id="show-image">
+					<ul>
+						<li><img id="img1" onclick="changeImage('img1');" onauxclick="opacity('img1')" src="images/chibi/chibi1.jpg"></li>
+						<li><img id="img2" onclick="changeImage('img2');" onauxclick="opacity('img1')" src="images/chibi/chibi2.jpg"></li>
+						<li><img id="img3" onclick="changeImage('img3');" onauxclick="opacity('img1')"src="images/chibi/chibi3.jpg"></li>
+						<li><img id="img4" onclick="changeImage('img4');"  onauxclick="opacity('img1')"src="images/chibi/chibi4.jpg"></li>
+					</ul>
+					<div class="lien-he">
+						<div class="text">
+							<div class="icon"><img src="images/headset.png"></div>
+							<div class="content">Hãy để lại SĐT, chuyên viên tư vấn của chúng tôi sẽ gọi ngay cho bạn miễn phí!</div>
+						</div>						
+						<input type="text" placeholder="Nhập số điện thoại...">
+						<button type="submit">Gửi</i>
+						
+
+
+					</div>
+				</div>
+				<div class="top-center">
+					<div class="link">
+						<a href="index.html">Trang chủ</a><i> / </i>
+						<a href="shop.html">Mô hình Chibi</a><i> / </i>
+						<a href="detail.html">Chibi bé trai</a>
+					</div>
+					<div class="tittle">Mô hình Chibi bé trai công nhân 58</div>
+					<div class="gia">95.000₫</div>
+					<div class="info">Chibi in PP cao cấp dán và cắt chi tiết trên Fomex mô hình 5 ly. Cảm giác được tự chuẩn bị cho những sự kiện đầu đời của bé luôn là những niềm vui khó tả. Hãy để Nana giúp các mẹ làm điều đó nha</div>
+					<div class="so-luong">
+						<button onclick="decrement()">-</button>
+						<input style="text-align: center;" type="text" id="quantity" name="quantity" value="1">
+						<button onclick="increment()">+</button>
+						<div><a href="#">THÊM VÀO GIỎ HÀNG</a></div>
+					</div>
+					
+					<div class="lien-he">
+						<div class="fb">Chat Facebook</div>
+						<div class="zalo">Chat Zalo</div>
+						<div class="si">Mua sỉ: 086.835.7939</div>
+						<div class="le">Mua lẻ: 097.822.5678</div>
+					</div>
+					<div class="mua-ngay">
+						<div class="text">MUA NGAY</div>
+						<div class="content">Gọi điện xác nhận và giao hàng tận nơi</div>
+					</div>
+					<div class="danh-muc">
+						<p>Danh mục:</p>
+						<p class="a">Chibi bé trai,</p>
+						<p class="a">Chibi bé gái</p>
+					</div>
+					<div class="mxh">
+						<div class="fb"><i class="fa-brands fa-facebook-f"></i></div>
+						<div class="twit"><i class="fa-brands fa-twitter"></i></div>
+						<div class="mail"><i class="fa-regular fa-envelope"></i></div>
+						<div class="pin"><i class="fa-brands fa-pinterest"></i></div>
+						<div class="linkin"><i class="fa-brands fa-linkedin"></i></div>
+					</div>
+				</div>
+				<div class="top-right">
+					<div class="box">
+						<div class="bgr-text-spm">
+							<div class="text">Bài viết mới</div>
+						</div>
+						<div class="bgr-spm">
+							<div class="spm">
+								<div class="image-spm">
+									<img src="images/shop/sp1.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Bà bầu cứ nắm nguyên tắc này, đảm bảo ăn nhiều bao nhiêu cũng “vào con không vào mẹ”</div>
+								</div>
+							</div>
+							<div class="spm">
+								<div class="image-spm">
+									<img src="images/shop/sp2.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Tìm cách bổ sung lợi khuẩn cho hệ tiêu hóa của trẻ</div>
+								</div>
+							</div>
+							<div class="spm">
+								<div class="image-spm">
+									<img src="images/shop/sp3.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Cách khắc phục khi uống sữa bầu bị tiêu chảy</div>
+								</div>
+							</div>
+							<div class="spm">
+								<div class="image-spm">
+									<img src="images/shop/sp4.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Con em thoát khỏi táo bón một cách thần kỳ nhờ bào tử lợi khuẩn Preg-Mom</div>
+								</div>
+							</div>
+							<div class="spm">
+								<div class="image-spm">
+									<img src="images/shop/sp5.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Top 5 loại sữa tốt nhất cho bà bầu và thai nhi</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="box">
+						<div class="bgr-text-spm">
+							<div class="text">Sản phẩm mới</div>
+						</div>
+						<div class="bgr-spm">
+							<div class="spm">
+								<div class="image-spm1">
+									<img src="images/shop/sp1.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Mô hình Chibi bé gái làm ca sĩ</div>
+								</div>
+							</div>
+							<div class="spm">
+								<div class="image-spm1">
+									<img src="images/shop/sp2.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Mô hình Chibi bé trai khoác túi đi học</div>
+								</div>
+							</div>
+							<div class="spm">
+								<div class="image-spm1">
+									<img src="images/shop/sp3.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Mô hình Chibi bé trai công nhân 58</div>
+								</div>
+							</div>
+							<div class="spm">
+								<div class="image-spm1">
+									<img src="images/shop/sp4.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Mô hình Chibi bé gái dễ thương 01</div>
+								</div>
+							</div>
+							<div class="spm">
+								<div class="image-spm1">
+									<img src="images/shop/sp5.jpg">
+								</div>
+								<div class="info">
+									<div class="content-spm">Mô hình Chibi bé gái màu hồng mã 51</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mo-ta">
+				
+			</div>
+			<div class="sptt">Sản phẩm tương tự</div>
+			<div class="bot">				
+				<div class="main-bot-right">
+					<div class="card">
+						<div class="image-card">
+							<img src="images/chibi/chibi1.jpg">
+						</div>
+						<div class="content-card">Mô hình chibi bé gái màu hồng mã 51</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/chibi/chibi2.jpg">
+						</div>
+						<div class="content-card">Mô hình chibi bé gái làm ca sĩ</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/chibi/chibi3.jpg">
+						</div>
+						<div class="content-card">Mô hình chibi bé trai khoác túi đi học</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+					<div class="card">
+						<div class="image-card">
+							<img src="images/chibi/chibi4.jpg">
+						</div>
+						<div class="content-card">Mô hình chibi bé gái dễ thương 01</div>
+						<div class="gia">560.000₫</div>
+						<div class="add-card">Thêm vào giỏ hàng</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /main -->
+
+
+		<!-- footer -->
+		<footer>
+			<!-- Banner -->
+			<div class="my-element">
+				<div class="nana">
+					<img style="height: 200px; padding-top: 50px; padding-left: 150px;" src="images/nana.png">
+				</div>
+				<div class="dang-ky">
+					<h2>ĐĂNG KÝ TƯ VẤN MIỄN PHÍ</h2>
+					<p>Nhân viên của chúng tôi sẵn lòng tư vấn miễn phí giúp bạn</p>
+					<div class="text-box1">
+						<input type="text" placeholder="Tên của bạn...">
+						<input type="text" placeholder="Số điện thoại...">
+					</div>
+					<div class="text-box2">
+						<input type="text" placeholder="Địa chỉ email...">
+						<input type="text" placeholder="Nội dung đăng ký...">
+					</div>
+					<button type="submit">Đăng ký nhận khuyến mãi</button>
+				</div>
+				<div class="nana">
+					<img style="height: 200px; padding-top: 50px;" src="images/nana2.png">
+				</div>
+			</div>
+			<!-- /Banner -->
+
+			<!-- thong-tin -->
+			<div class="bot">
+				<div class="bot-left">
+					<h3>Về chúng tôi</h3>
+					<img style="width: 150px; margin: 12px; padding-left: 20px;" src="images/logo-nana.jpg">
+					<p>Sau một thời gian hoạt động, website đã có những bước tiến đáng kể cả về chất lượng và hình thức. Số lượng khách truy cập website trở thành khách hàng sử dụng dịch vụ thiết kế tăng lên đáng kể.</p>
+					<div class="link">
+						<li class="fb-icon"><i class="fa-brands fa-facebook-f"></i></li>
+						<li class="mail-icon"><i class="fa-regular fa-envelope"></i></li>
+						<li class="phone-icon"><i class="fa-solid fa-phone"></i></li>
+						<li class="yt-icon"><i class="fa-brands fa-youtube"></i></li>
+					</div>
+				</div>
+				<div class="bot-center">
+					<h3>Hỗ trợ khách hàng</h3>
+					<ul class="menu-bot">
+						<li>Hướng dẫn đặt hàng & thanh toán</li>
+						<li>Chính sách giao hàng & đổi trả</li>
+						<li>Thỏa thuận người dùng</li>
+						<li>Chính sách bảo mật</li>
+						<li>Chính sách đại lý</li>
+						<li>Địa chỉ cửa hàng Cây Xinh</li>
+					</ul>
+					<h3>Thông tin liên hệ</h3>
+					<ul>
+						<li>Mobile: 0123456xxx</li>
+						<li>Email: email@gmail.com</li>
+						<li>Website: www.website.com.vn</li>
+					</ul>
+				</div>
+				<div class="bot-right">
+					<h3>Fanpage Facebook</h3>
+					<div class="facebook">
+						<div class="img">
+							<img style="width:60px; cursor: pointer;" src="images/fb.png">
+							<div class="like">
+								<h3 style="color: white; margin: 5px; cursor: pointer;">Facebook <i style="color: #006cff;" class="fa-solid fa-circle-check"></i></h3>
+								<p style="color:white; margin-top: -5px; margin-left: 5px; font-size: 12px;">132.124.453 lượt thích</p>
+							</div>
+						</div>
+						<button type="submit"><i style="color: #3a5897" class="fa-brands fa-square-facebook"></i> Thích trang</button>
+						<button style="right: 10px" type="submit"><i style="color:#686f7e" class="fa-solid fa-share"></i> Share</button>
+						<img style="height:130px" src="images/facebook.jpg">
+					</div>
+				</div>
+			</div>
+			<!-- /thong-tin -->
+
+			<!-- end -->
+			<nav style="background: #f9f9f9; text-align: center;" class="menu-footer">
+				<ul>
+					<li style=" list-style: none;"><img src="images/thanh-toan.png"></li>
+				</ul>
+				<div class="copy-right"> &#x25cf Bản quyền</div>
+			</nav>
+			
+			<!-- /end -->
+		</footer>
+		<!-- /footer -->
+	</div>
+	<!-- /container -->
+</body>
+</html>	
